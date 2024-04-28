@@ -31,11 +31,13 @@ public class ReservationServiceImpl implements ReservationService {
         //If parkingLot is not found, user is not found, or no spot is available, throw "Cannot make reservation" exception.
 
       User user=userRepository3.findById(userId).get();
+
       if(user==null){
           throw new Exception("Cannot make reservation" );
       }
 
       ParkingLot parkingLot=parkingLotRepository3.findById(parkingLotId).get();
+
       if(parkingLot==null){
           throw new Exception("Cannot make reservation");
       }
